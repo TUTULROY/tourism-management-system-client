@@ -1,10 +1,16 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
     const {signIn} = useContext(AuthContext);
+
+    const navigate = useNavigate();
+      const location = useLocation();
+  
+      const from = location?.state || "/"
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -17,10 +23,24 @@ const Login = () => {
 
         signIn(email, password)
         .then(result =>{
-            console.log(result.user)
+            if(result.user){
+                Swal.fire({
+                    title: 'Login successfully!',
+                    text: 'Login successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                  })
+                navigate(from);
+            }
         })
         .catch(error =>{
             console.error(error);
+            Swal.fire({
+                title: 'Error login!',
+                text: 'Incorrect Email & Password',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+              })
         })
         }
     return (
@@ -32,6 +52,7 @@ const Login = () => {
             <span className="label-text">Email</span>
           </label>
           <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+          
         </div>
       
         <div className="form-control">

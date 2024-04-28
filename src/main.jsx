@@ -12,6 +12,7 @@ import AddTouristsSpot from './components/AddTouristsSpot/AddTouristsSpot.jsx';
 import Register from './components/Register/Register.jsx';
 import Login from './components/Login/Login.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
+import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
 
 
 
@@ -27,7 +28,9 @@ const router = createBrowserRouter([
       },
       {
         path:'/add-spots',
-        element:<AddTouristsSpot></AddTouristsSpot>
+        element:<PrivateRoute>
+          <AddTouristsSpot></AddTouristsSpot>
+        </PrivateRoute>
       },
       {
         path:'/register',
