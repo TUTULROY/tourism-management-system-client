@@ -9,6 +9,9 @@ import {
 import Home from './components/Home/Home.jsx';
 import Root from './components/Root/Root.jsx';
 import AddTouristsSpot from './components/AddTouristsSpot/AddTouristsSpot.jsx';
+import Register from './components/Register/Register.jsx';
+import Login from './components/Login/Login.jsx';
+import AuthProvider from './providers/AuthProvider.jsx';
 
 
 
@@ -19,11 +22,20 @@ const router = createBrowserRouter([
     children:[
       {
         path:"/",
-        element:<Home></Home>
+        element:<Home></Home>,
+        loader:()=> fetch('http://localhost:5000/spots')
       },
       {
         path:'/add-spots',
         element:<AddTouristsSpot></AddTouristsSpot>
+      },
+      {
+        path:'/register',
+        element:<Register></Register>
+      },
+      {
+        path:'login',
+        element:<Login></Login>
       }
     ]
   },
@@ -31,6 +43,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
