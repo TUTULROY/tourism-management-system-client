@@ -49,6 +49,7 @@ const NavBar = () => {
   </div>
   <div className="navbar-end">
     <div className="flex gap-2">
+        
   <div className="w-10 rounded-full">
           <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
         </div>

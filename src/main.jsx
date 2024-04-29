@@ -13,6 +13,7 @@ import Register from './components/Register/Register.jsx';
 import Login from './components/Login/Login.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
+import ViewDetails from './components/ViewDetails/ViewDetails.jsx';
 
 
 
@@ -39,6 +40,13 @@ const router = createBrowserRouter([
       {
         path:'login',
         element:<Login></Login>
+      },
+      {
+        path:'/travels/:id',
+        element:<PrivateRoute>
+          <ViewDetails></ViewDetails>
+        </PrivateRoute>,
+        loader:() => fetch('../http://localhost:5000/add-spots')
       }
     ]
   },

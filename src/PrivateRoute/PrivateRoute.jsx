@@ -11,7 +11,7 @@ const PrivateRoute = ({children}) => {
     const location = useLocation()
 
     if(loading){
-        return <h2 className="text-4xl animate__slower">
+        return <h2 className="text-4xl">
             <span className="loading loading-infinity loading-lg"></span>
         </h2>;
     }
