@@ -48,22 +48,19 @@ const NavBar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  <div className="navbar-end">
     
     {
-    user? <div className=" flex tooltip tooltip-left" data-tip={user?.displayName || 'user name not found'}>
+    user? <div className="dropdown dropdown-end tooltip tooltip-left" data-tip={user.displayName}>
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="">
-  <div className="w-10 rounded-full">
+  <div className="w-10 rounded-full ">
     <img src={user?.photoURL || "https://i.postimg.cc/5N1C1vBJ/Tutul-roy.jpg" } />
   </div>
-  </div>
 </label>
-        <ul tabIndex={0} className=" shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+        <ul tabIndex={0} className="mt-3 z-[50] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
   
-  {/* <li><button className="btn btn-sm btn-ghost">
+  <li><button className="btn btn-sm btn-ghost">
     {user?.displayName || 'user name not found'}
-    </button></li> */}
+    </button></li>
   <li><button onClick={logOut} className="btn btn-sm btn-ghost">
     Logout
     </button>
@@ -81,7 +78,6 @@ const NavBar = () => {
   
          
       </div>
-  </div>
 </div>
         </div>
     );

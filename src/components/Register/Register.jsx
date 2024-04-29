@@ -26,7 +26,12 @@ const Register = () => {
         const photo = form.get('photo');
         const email = form.get('email');
         const password = form.get('password');
+
         console.log(name, photo, email, password);
+
+        const uppercaseRegex = /[A-Z]/;
+        const lowercaseRegex = /[a-z]/;
+        if(password.length<6 || !uppercaseRegex.test(password) || !lowercaseRegex.test(password))
 
         createUser(email, password)
         .then(result =>{

@@ -10,7 +10,7 @@ const Home = () => {
             <Banner></Banner>
             <h2 className="text-xl text-center"> Tourist Spot: {spots.length}</h2>
 
-            <div className="grid lg:grid-cols-3 gap-6 mt-3 mb-3">
+            <div className="grid lg:grid-cols-2 mx-auto gap-6 mt-3 mb-3">
                 {
                     spots.map(spot => <TouristsSpots
                     key={spot._id} 
