@@ -7,11 +7,11 @@ const NavBar = () => {
 
     const {user, logOut} = useContext(AuthContext);
 
-    const handleSignOut = () =>{
-        logOut()
-        .then()
-        .catch()
-    }
+    // const handleSignOut = () =>{
+    //     logOut()
+    //     .then()
+    //     .catch()
+    // }
 
     const navLink = <>
     
@@ -48,21 +48,39 @@ const NavBar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <div className="flex gap-2">
-        
+  <div className="navbar-end">
+    
+    {
+    user? <div className=" flex tooltip tooltip-left" data-tip={user?.displayName || 'user name not found'}>
+      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+        <div className="">
   <div className="w-10 rounded-full">
-          <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-        </div>
-        {
-            user ? 
-            <button onClick={handleSignOut} className="btn">Logout</button>
-            : 
-            <Link to='/login'>
-            <button className="btn">Login</button>
-        </Link>
-        }
-   
-    </div>
+    <img src={user?.photoURL || "https://i.postimg.cc/5N1C1vBJ/Tutul-roy.jpg" } />
+  </div>
+  </div>
+</label>
+        <ul tabIndex={0} className=" shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+  
+  {/* <li><button className="btn btn-sm btn-ghost">
+    {user?.displayName || 'user name not found'}
+    </button></li> */}
+  <li><button onClick={logOut} className="btn btn-sm btn-ghost">
+    Logout
+    </button>
+    </li>
+  
+</ul>
+</div>
+:
+<Link to='/login'>
+<button className="btn btn-sm btn-ghost">
+    Login
+    </button>
+</Link>
+    }
+  
+         
+      </div>
   </div>
 </div>
         </div>

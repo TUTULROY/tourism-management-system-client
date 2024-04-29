@@ -46,7 +46,7 @@ const router = createBrowserRouter([
         element:<PrivateRoute>
           <ViewDetails></ViewDetails>
         </PrivateRoute>,
-        loader:() => fetch('../http://localhost:5000/add-spots')
+        loader:() => fetch('http://localhost:5000/spots')
       }
     ]
   },
