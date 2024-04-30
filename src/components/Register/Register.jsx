@@ -32,6 +32,17 @@ const Register = () => {
         const uppercaseRegex = /[A-Z]/;
         const lowercaseRegex = /[a-z]/;
         if(password.length<6 || !uppercaseRegex.test(password) || !lowercaseRegex.test(password))
+        {
+            Swal.fire({
+                icon: "error",
+                title: "Password must contain at least 6 characters with both uppercase and lowercase letters.",
+                showConfirmButton: false,
+                timer: 2000
+            });
+            return;
+        }
+
+
 
         createUser(email, password)
         .then(result =>{

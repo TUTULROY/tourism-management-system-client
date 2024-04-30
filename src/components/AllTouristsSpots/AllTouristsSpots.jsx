@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import PropTypes from 'prop-types';
 
 const AllTouristsSpots = ({all_spot}) => {
     const {_id, tourists_spot_name, seasonality, travel_time, totalVisitorsPerYear, average_cost, photo}=all_spot;
@@ -64,3 +64,7 @@ const AllTouristsSpots = ({all_spot}) => {
 };
 
 export default AllTouristsSpots;
+
+AllTouristsSpots.propTypes ={
+    all_spot: PropTypes.node
+}
