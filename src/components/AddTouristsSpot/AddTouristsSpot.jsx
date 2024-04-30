@@ -63,7 +63,15 @@ const handleAddTouristsSpot = event =>{
                 </label>
                 <label className="input-group">
                     
-                    <input type="text" name="country_Name" placeholder="Country Name" className="input input-bordered w-full" />
+                    {/* <input type="text" name="country_Name" placeholder="Country Name" className="input input-bordered w-full" /> */}
+                    <select type="text" name='country_Name' className="select select-bordered w-full ">
+                    <option >Bangladesh</option>
+                    <option>Thailand</option>
+                    <option>Indonesia</option>
+                    <option>Malaysia</option>
+                    <option>Vietnam</option>
+                    <option>Cambodia</option>
+                    </select>
                 </label>
                 </div> 
                 </div>

@@ -76,7 +76,7 @@ console.log(theme);
 </label>
     
     {
-    user? <div className="dropdown dropdown-end tooltip tooltip-right" data-tip={user.displayName}>
+    user? <div className="dropdown dropdown-end tooltip tooltip-left  z-50" data-tip={user.displayName}>
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
   <div className="w-10 rounded-full ">
     <img src={user?.photoURL || "https://i.postimg.cc/5N1C1vBJ/Tutul-roy.jpg" } />

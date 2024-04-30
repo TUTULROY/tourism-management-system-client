@@ -6,8 +6,8 @@ const HeroSection = () => {
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold">WelCome To Rangamati</h1>
-      <p className="mb-5">Rangamati is the administrative headquarter and town of Rangamati Hill District in the Chittagong Hill Tracts of Bangladesh.</p>
+      <h1 className="mb-5 text-5xl font-bold">WelCome</h1>
+      <p className="mb-5">A tourism or travel website serves as an information hub for prospective travelers planning a getaway</p>
       <button className="btn text-xl btn-primary">Go</button>
     </div>
   </div>
