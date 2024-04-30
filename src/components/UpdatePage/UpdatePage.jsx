@@ -36,9 +36,9 @@ const UpdatePage = () => {
             if(data.modifiedCount > 0){
                 Swal.fire({
                     title: 'success!',
-                    text: 'User added',
+                    text: 'Update successful',
                     icon: 'success',
-                    confirmButtonText: 'Cool'
+                    confirmButtonText: 'Ok'
                   })
             }
         })

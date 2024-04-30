@@ -17,6 +17,7 @@ import ViewDetails from './components/ViewDetails/ViewDetails.jsx';
 import AllTouristsSpot from './components/AllTouristsSpot/AllTouristsSpot.jsx';
 import UpdatePage from './components/UpdatePage/UpdatePage.jsx';
 import MyList from './components/MyList/MyList.jsx';
+import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 
 
 
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:"/",
