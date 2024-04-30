@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
-import logo from "../../assets/TRAVEL_TOURISM_LOGO-02.jpg"
+
 
 const NavBar = () => {
 
@@ -50,10 +50,9 @@ console.log(theme);
       </ul>
       
     </div>
-    <a className="btn btn-ghost text-xl">
-        <img className="w-7 rounded-xl mr-3" src={logo} alt="" />
-        <h2>Tourism Management</h2>
-    </a>
+    <Link to='/'  className="btn btn-ghost text-xl">
+      <span className="text-green-500 font-extrabold">Tourism</span> <span className="text-orange-500 font-bold">Management</span>
+      </Link> 
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
