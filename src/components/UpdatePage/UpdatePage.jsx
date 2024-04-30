@@ -23,7 +23,7 @@ const UpdatePage = () => {
         console.log(updatedSpot);
     
     
-        fetch(`http://localhost:5000/spots/${_id}`,{
+        fetch(`https://tourism-management-server-sandy.vercel.app/spots/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

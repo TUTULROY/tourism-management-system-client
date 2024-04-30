@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<Home></Home>,
-        loader:()=> fetch('http://localhost:5000/spots')
+        loader:()=> fetch('https://tourism-management-server-sandy.vercel.app/spots')
       },
       {
         path:'/add-spots',
@@ -57,19 +57,19 @@ const router = createBrowserRouter([
         element:<PrivateRoute>
           <ViewDetails></ViewDetails>
         </PrivateRoute>,
-        loader:({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
+        loader:({params}) => fetch(`https://tourism-management-server-sandy.vercel.app/${params.id}`)
       },
       {
         path:'/all-spots',
         element:<AllTouristsSpot></AllTouristsSpot>,
-        loader:() => fetch('http://localhost:5000/spots')
+        loader:() => fetch('https://tourism-management-server-sandy.vercel.app/spots')
       },
       {
         path:'/update/:id',
         element:<PrivateRoute>
           <UpdatePage></UpdatePage>
         </PrivateRoute>,
-        loader:({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
+        loader:({params}) => fetch(`https://tourism-management-server-sandy.vercel.app/spots/${params.id}`)
       }
     ]
   },

@@ -21,7 +21,7 @@ const handleAddTouristsSpot = event =>{
     console.log(newSpot);
 
 
-    fetch('http://localhost:5000/spots',{
+    fetch('https://tourism-management-server-sandy.vercel.app/spots',{
         method:'POST',
         headers:{
             'content-type':'application/json'
