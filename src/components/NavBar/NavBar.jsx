@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
+import logo from "../../assets/TRAVEL_TOURISM_LOGO-02.jpg"
 
 const NavBar = () => {
 
@@ -18,7 +19,7 @@ const NavBar = () => {
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/all-spots'>All Tourists Spot</NavLink></li>
     <li><NavLink to='/add-spots'> Add Tourists Spot</NavLink></li>
-    <li><NavLink to='/update'>Update Page</NavLink></li>
+   
     <li><NavLink to='/my-lists'>My List</NavLink></li>
     <li><NavLink to='/login'>Login</NavLink></li>
     
@@ -37,7 +38,10 @@ const NavBar = () => {
         }
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl">
+        <img className="w-7 rounded-xl mr-3" src={logo} alt="" />
+        <h2>Tourism Management</h2>
+    </a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

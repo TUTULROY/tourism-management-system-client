@@ -15,6 +15,7 @@ import AuthProvider from './providers/AuthProvider.jsx';
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
 import ViewDetails from './components/ViewDetails/ViewDetails.jsx';
 import AllTouristsSpot from './components/AllTouristsSpot/AllTouristsSpot.jsx';
+import UpdatePage from './components/UpdatePage/UpdatePage.jsx';
 
 
 
@@ -53,6 +54,13 @@ const router = createBrowserRouter([
         path:'/all-spots',
         element:<AllTouristsSpot></AllTouristsSpot>,
         loader:() => fetch('http://localhost:5000/spots')
+      },
+      {
+        path:'/update/:id',
+        element:<PrivateRoute>
+          <UpdatePage></UpdatePage>
+        </PrivateRoute>,
+        loader:({params}) => fetch(`http://localhost:5000/spots/${params.id}`)
       }
     ]
   },

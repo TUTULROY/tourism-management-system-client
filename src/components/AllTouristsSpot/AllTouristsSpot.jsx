@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import {  useLoaderData } from "react-router-dom";
 import AllTouristsSpots from "../AllTouristsSpots/AllTouristsSpots";
 import { useState } from "react";
 
@@ -38,6 +38,9 @@ const AllTouristsSpot = () => {
 
                     </AllTouristsSpots>)
                 }
+            </div>
+            <div>
+            
             </div>
         </div>
     );
