@@ -99,7 +99,7 @@ const Register = () => {
           </label>
           <div className=" relative">
               
-        <input type={showPassword ? "text" : "password" } name="password"  placeholder="Password" className="w-full input input-bordered" />
+        <input type={showPassword ? "text" : "password" } name="password"  placeholder="Password" className="w-full input input-bordered" required />
         
 
         <span className="absolute top-4 right-2" onClick={() => setShowPassword(!showPassword)}>

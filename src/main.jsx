@@ -16,6 +16,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
 import ViewDetails from './components/ViewDetails/ViewDetails.jsx';
 import AllTouristsSpot from './components/AllTouristsSpot/AllTouristsSpot.jsx';
 import UpdatePage from './components/UpdatePage/UpdatePage.jsx';
+import MyList from './components/MyList/MyList.jsx';
 
 
 
@@ -42,6 +43,12 @@ const router = createBrowserRouter([
       {
         path:'login',
         element:<Login></Login>
+      },
+      {
+        path:'/my-lists',
+        element:<PrivateRoute>
+          <MyList></MyList>
+        </PrivateRoute>
       },
       {
         path:'travels/:id',
