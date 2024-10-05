@@ -14,7 +14,7 @@ const Home = () => {
 
            
 
-            <div className="grid lg:grid-cols-2 mx-auto gap-6 mt-3 mb-3">
+            <div className="grid lg:grid-cols-3 mx-auto gap-6 mt-3 mb-3">
                 {
                     spots.map(spot => <TouristsSpots
                     key={spot._id} 

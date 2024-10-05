@@ -1,48 +1,69 @@
 import {  useLoaderData } from "react-router-dom";
 import AllTouristsSpots from "../AllTouristsSpots/AllTouristsSpots";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const AllTouristsSpot = () => {
     // const { tourists_spot_name, country_Name, location, description, average_cost, photo}=spot;
-    const [sortOrder, setSortOrder] = useState("asc");
-
+    const spot = useLoaderData();
+    const [all_spots, setAllSpots] = useState(spot);
+    const [sort, setSort] = useState("asc");
+    const [search, setSearch] = useState("");
     
-
     
-    const all_spots = useLoaderData();
     // console.log(all_spots);
-    const sortByAverageCost = (a, b) => {
-        if (sortOrder === "asc") {
-            return a.average_cost - b.average_cost;
-        } else {
-            return b.average_cost - a.average_cost;
-        }
+    
+    useEffect(() => {
+      fetch(`https://tourism-management-server-sandy.vercel.app/spots?search=${search}`)
+        .then((res) => res.json())
+        .then((data) => {
+          const sortSort = data.sort(
+            (a, b) => new Date(b.dateAdd) - new Date(a.dateAdd)
+          );
+          setAllSpots(sortSort);
+        });
+    }, [search]);
+    // console.log(all_spots);
+
+    const handleSearch = (e) => {
+      e.preventDefault();
+      const searchText = e.target.search.value;
+      setSearch(searchText);
     };
 
-    const handleSortOrderChange = (e) => {
-        setSortOrder(e.target.value);
+    const handleSortChange = (e) => {
+        setSort(e.target.value);
     };
     return (
+      <div className="text-center">
         <div className="text-center">
-            <select value={sortOrder} onChange={handleSortOrderChange}>
-                    <option value="asc">Lowest Average Cost First</option>
-                    <option value="desc">Highest Average Cost First</option>
-                </select>
-            <div className="lg:grid grid-cols-3 gap-5 mt-4 mb-5">
-            {
-                    all_spots.sort(sortByAverageCost).map(all_spot => <AllTouristsSpots
-                    key={all_spot._id} 
-                    all_spot={all_spot}
-                    >
-
-                    </AllTouristsSpots>)
-                }
-            </div>
-            <div>
-            
-            </div>
+          <form onSubmit={handleSearch}>
+            <input className="input input-bordered" type="text" name="search" />
+            <input className="btn btn-outline" type="submit" value="Search" />
+          </form>
+          <select
+            className="btn btn-secondary mt-2 mb-2"
+            value={sort}
+            onChange={handleSortChange}
+          >
+            <option className="btn btn-outline" value="asc">
+              Price: Low to High
+            </option>
+            <option className="btn btn-outline" value="desc">
+              Price: High to Low
+            </option>
+          </select>
         </div>
+        <div className="lg:grid grid-cols-3 gap-5 mt-4 mb-5">
+          {all_spots.map((all_spot) => (
+            <AllTouristsSpots
+              key={all_spot._id}
+              all_spot={all_spot}
+            ></AllTouristsSpots>
+          ))}
+        </div>
+        <div></div>
+      </div>
     );
 };
 

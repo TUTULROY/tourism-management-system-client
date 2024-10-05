@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         element:<PrivateRoute>
           <ViewDetails></ViewDetails>
         </PrivateRoute>,
-        loader:({params}) => fetch(`https://tourism-management-server-sandy.vercel.app/${params.id}`)
+        loader:({params}) => fetch(`https://tourism-management-server-sandy.vercel.app/spots/${params.id}`)
       },
       {
         path:'/all-spots',
