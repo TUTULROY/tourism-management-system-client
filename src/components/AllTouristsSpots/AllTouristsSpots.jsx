@@ -9,7 +9,7 @@ const AllTouristsSpots = ({all_spot}) => {
 
     return (
       <div>
-        <div className=" bg-base-100 shadow-xl">
+        <div className=" bg-base-100 w-auto h-full shadow-xl">
           <figure className="px-10 pt-10">
             <img src={photo} className="rounded-xl" alt="" />
           </figure>

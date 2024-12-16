@@ -15,11 +15,11 @@ const TouristsSpots = ({ spot }) => {
   return (
     <div>
       <Fade delay={600} description="right">
-        <div className="card bg-base-100 w-96 shadow-xl">
+        <div className="card bg-base-100 w-96  h-96 shadow-xl">
           <figure className="px-10 pt-10">
             <img src={photo} className="rounded-xl" alt="" />
           </figure>
-          <div className="card-body items-center text-center">
+          <div className="card-body">
             <h2 className="card-title">{tourists_spot_name}</h2>
             <p>{country_Name}</p>
             <p>{location}</p>
